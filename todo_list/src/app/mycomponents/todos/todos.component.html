@@ -1,3 +1,6 @@
-<ul *ngFor="let Todo of todos">
-    <li>{{Todo.sno}} - {{Todo.title}} - {{Todo.desc}}</li>
-</ul>
+<div *ngFor="let Todo of todos">
+    <li>{{Todo.title}}</li>
+</div>
+<div>
+    <app-todo-item></app-todo-item>
+</div>
