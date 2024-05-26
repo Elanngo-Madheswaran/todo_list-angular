@@ -1,0 +1,6 @@
+<div class="card-body">
+    <h1>My tasks ({{ tasks.length }})</h1>
+    <li class="d-flex justify-content-around align-items-center my-3 p-2 border border-tertiary border-4 rounded-4" *ngFor="let task of tasks;let i = index">
+      {{task}} 
+      <button class="btn btn-danger mx-3">Delete</button></li>
+  </div>
