@@ -1,4 +1,4 @@
-<div class="card-body">
-    <input class="form-control" type="text" name="newTask" id="newTask">
-    <button type="submit" class="btn btn-primary my-3 ">Add task</button>
-</div>
+<form action="" class="card-body">
+    <input placeholder="task name" class="form-control" type="text" name="newTask" id="newTask" [(ngModel)]="task_name" required>
+    <button type="submit" class="btn btn-primary my-3" (click)="addTodo()">Add task</button>
+</form>

@@ -1,6 +1,7 @@
 <div class="card-body">
-    <h1>My tasks ({{ tasks.length }})</h1>
-    <li class="d-flex justify-content-around align-items-center my-3 p-2 border border-tertiary border-4 rounded-4" *ngFor="let task of tasks;let i = index">
+    <h1 *ngIf="tasks.length">Current Tasks ({{ tasks.length }})</h1>
+    <h1 *ngIf="!tasks.length">No current tasks</h1>
+    <li class="d-flex justify-content-around align-items-center my-4 p-3 rounded-4 bg bg-light bg-opacity-25 shadow" *ngFor="let task of tasks ;let i = index">
       {{task}} 
-      <button class="btn btn-danger mx-3">Delete</button></li>
+      <button class="btn btn-danger mx-3" (click)="delete_task(i)">Delete</button></li>
   </div>

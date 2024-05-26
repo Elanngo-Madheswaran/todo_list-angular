@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container bg bg-light bg-opacity-25 m-5 p-5 rounded-4">
   <div class="card-row">
-    <div class="card header h1 shadow-lg border-0 text-center m-5 p-3 rounded-3">{{title}}</div>
-    <app-task-form></app-task-form>
+    <div class="card header h1 shadow-lg border-0 text-center mb-5 p-3 rounded-3">{{title}}</div>
+    <app-task-form [taskList]="taskList"></app-task-form>
     <app-task-list [tasks]="taskList" ></app-task-list>
   </div>
 </div>
