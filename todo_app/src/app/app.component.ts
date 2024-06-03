@@ -15,7 +15,8 @@ import { FormsModule } from '@angular/forms';
 export class AppComponent implements OnInit {
   title = 'Task List';
 
-  taskList: string[] = [];
+  taskList: { task_name: string, task_desc: string }[] = [];
+
 
   ngOnInit(): void {
     if(localStorage.getItem("my_tasks")){

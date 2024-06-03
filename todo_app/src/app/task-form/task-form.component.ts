@@ -1,21 +1,24 @@
 import { Component, Input } from '@angular/core';
-import { FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-task-form',
-  standalone: true,
-  imports: [FormsModule],
+  standalone:true,
   templateUrl: './task-form.component.html',
-  styleUrl: './task-form.component.css'
+  styleUrls: ['./task-form.component.css'],
+  imports:[FormsModule]
 })
 export class TaskFormComponent {
-  @Input() taskList;
+  @Input() taskList: { task_name: string, task_desc: string }[] = [];
   task_name: string;
+  task_desc: string;
   searchText: string;
 
-  addTodo(){
-    this.taskList.unshift(this.task_name);
-    localStorage.setItem("my_tasks", JSON.stringify(this.taskList))
-    this.task_name="";
+  addTodo() {
+    const newTask = { task_name: this.task_name, task_desc: this.task_desc };
+    this.taskList.unshift(newTask);
+    localStorage.setItem("my_tasks", JSON.stringify(this.taskList));
+    this.task_name = "";
+    this.task_desc = "";
   }
 }
